@@ -4,9 +4,7 @@ public:
         
         
         ans.push_back(ds);
-        if(ind==n){
-            return;
-        }
+        
         
         
         for(int i=ind;i<n;i++){
