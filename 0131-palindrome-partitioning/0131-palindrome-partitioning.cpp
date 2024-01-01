@@ -10,7 +10,7 @@ public:
         return check(i+1,s);
     }
     
-    void f(int ind,int n,string temp, string s, vector<string>&ds,vector<vector<string>>&ans){
+    void f(string temp, string s, vector<string>&ds,vector<vector<string>>&ans){
         
         if(s.length()==0){
             ans.push_back(ds);
@@ -22,7 +22,7 @@ public:
             s=s.substr(i+1,string::npos);
             if(check(0,temp)){
                 ds.push_back(temp);
-                f(ind+1,n,temp,s,ds,ans);
+                f(temp,s,ds,ans);
                 ds.pop_back();
             }
             s=copys;
@@ -32,7 +32,7 @@ public:
         vector<vector<string>>ans;
         vector<string>ds;
         
-        f(0,s.length(),"",s,ds,ans);
+        f("",s,ds,ans);
         
         return ans;
     }
